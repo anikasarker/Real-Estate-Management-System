@@ -90,15 +90,15 @@ if(!isset($_SESSION['auser']))
                                                     <th>Type</th>
                                                     <th>BHK</th>
                                                     <th>S/R</th>
-                                                   
 													<th>Area</th>
                                                     <th>Price</th>
                                                     <th>Location</th>
 													<th>Status</th>
                                                    
                                                     
-                                                    <th>Added Date</th>
-                                                    <th>Actions</th>
+                                                    <th>Added Date and Time</th>
+													<th>Actions</th>
+
                                                     
                                                 </tr>
                                             </thead>

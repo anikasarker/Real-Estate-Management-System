@@ -144,25 +144,13 @@ if(isset($_REQUEST['reg']))
 									<div class="form-group">
 										<input type="password" name="pass"  class="form-control" placeholder="Your Password*">
 									</div>
-
-									 <div class="form-check-inline">
-									  <label class="form-check-label">
-										<input type="radio" class="form-check-input" name="utype" value="user" checked>User <a href="userindex.php"></a>
-									  </label>
-									</div>
-									<div class="form-check-inline">
-									  <label class="form-check-label">
-										<input type="radio" class="form-check-input" name="utype" value="agent">Agent
-									  </label>
-									</div>
-					
 									<div class="form-group">
 										<label class="col-form-label"><b>User Image</b></label>
 										<input class="form-control" name="uimage" type="file">
 										<img src="" alt="">
 									</div>
 									
-									<button class="btn btn-success" name="reg" value="Register" type="submit">Register</button>
+									<button class="btn btn-info" name="reg" value="Register" type="submit">Register</button>
 									
 								</form>
 								

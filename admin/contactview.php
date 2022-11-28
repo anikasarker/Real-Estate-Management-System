@@ -69,6 +69,8 @@ if(!isset($_SESSION['auser']))
 					</div>
 					<!-- /Page Header -->
 					
+					
+					
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="card">
@@ -82,7 +84,7 @@ if(!isset($_SESSION['auser']))
 								</div>
 								<div class="card-body">
 
-									<table id="basic-datatable" class="table table-bordered table-hover">
+									<table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
                                             <thead>
                                                 <tr>
                                                     <th>#</th>

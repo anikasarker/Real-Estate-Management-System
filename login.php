@@ -130,17 +130,6 @@ if(isset($_REQUEST['login']))
 									</div>
 									
 										<button class="btn btn-info" name="login" value="Login" type="submit">Login <a href="userindex.php"></a></button>
-										<div class="form-check-inline">
-									  <label class="form-check-label">
-										<input type="radio" class="form-check-input" name="utype" value="user" checked>User</a>
-									  </label>
-									</div>
-									<div class="form-check-inline">
-									  <label class="form-check-label">
-										<input type="radio" class="form-check-input" name="utype" value="agent">Agent
-									  </label>
-									</div>
-									
 									
 								</form>
 								

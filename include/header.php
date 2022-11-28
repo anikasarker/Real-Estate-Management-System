@@ -4,21 +4,21 @@
                     <div class="row">
                         <div class="col-md-8">
                             <ul class="top-contact list-text-white  d-table">
-                                <li><a href="#"><i class="fas fa-phone-alt text-success mr-1"></i>01987818351</a></li>
-                                <li><a href="#"><i class="fas fa-envelope text-success mr-1"></i>anikasarker246@gmail.com</a></li>
+                                <li><a href="#"><i class="fas fa-phone-alt text-info mr-1"></i>01987818351</a></li>
+                                <li><a href="#"><i class="fas fa-envelope text-info mr-1"></i>anikasarker246@gmail.com</a></li>
                             </ul>
                         </div>
                         <div class="col-md-4">
                             <div class="top-contact float-right">
                                 <ul class="list-text-white d-table">
-								<li><i class="fas fa-user text-success mr-1"></i>
+								<li><i class="fas fa-user text-info mr-1"></i>
 								<?php  if(isset($_SESSION['uemail']))
 								{ ?>
 								<a href="logout.php">Logout</a>&nbsp;&nbsp;<?php } else { ?>
 								<a href="login.php">Login</a>&nbsp;&nbsp;
 								
 								| </li>
-								<li><i class="fas fa-user-plus text-success mr-1"></i><a href="register.php"> Register</li><?php } ?>
+								<li><i class="fas fa-user-plus text-info mr-1"></i><a href="register.php"> Register</li><?php } ?>
 								</ul>
                             </div>
                         </div>
@@ -29,7 +29,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <nav class="navbar navbar-expand-lg navbar-light p-0"> <a class="navbar-brand position-relative" href="index.php"><img class="nav-logo" src="images/logo/logo.PNG" alt="" height="60px" width="200px"></a>
+                            <nav class="navbar navbar-expand-lg navbar-light p-0"> <a class="navbar-brand position-relative" href="index.php"><img class="nav-logo" src="images/logo/logo.png" alt=""  height="50px" width="50px"></a>
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul class="navbar-nav mr-auto">
@@ -41,6 +41,7 @@
 										
                                         <li class="nav-item"> <a class="nav-link" href="property.php">Properties</a> </li>
                                         
+
 										
 										<?php  if(isset($_SESSION['uemail']))
 										{ ?>
@@ -58,7 +59,6 @@
 										
                                     </ul>
                                     
-									
 									
                                 </div>
                             </nav>
