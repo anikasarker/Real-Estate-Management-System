@@ -14,7 +14,7 @@ if(!isset($_SESSION['auser']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>LM Homes | About</title>
+        <title>About</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="admin/assets/img/profiles/1.png">
@@ -30,11 +30,7 @@ if(!isset($_SESSION['auser']))
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
-		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+<link rel="stylesheet" href="assets/css/about.css">
     </head>
     <body>
 	
@@ -46,7 +42,7 @@ if(!isset($_SESSION['auser']))
 			<!-- /Sidebar -->
 			
 			<!-- Page Wrapper -->
-            <div class="page-wrapper">
+            <div class="page-wrapper" style="background-color: bisque;">
                 <div class="content container-fluid">
 
 					<!-- Page Header -->
@@ -76,9 +72,9 @@ if(!isset($_SESSION['auser']))
 								</div>
 								<div class="card-body">
 
-									<div class="table-responsive">
-										<table class="table table-stripped table-bordered table-hover">
-											<thead>
+									<div class="table-responsive" >
+										<table class="table table-stripped table-bordered " >
+											<thead >
 												<tr>
 													<th>#</th>
 													<th>Title</th>

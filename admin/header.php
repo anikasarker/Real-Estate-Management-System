@@ -16,17 +16,14 @@ if(!isset($_SESSION['auser']))
 						<img src="assets/img/logo.PNG" alt="Logo">
 					</a>
 					<a href="dashboard.php" class="logo logo-small">
-						<img src="assets/img/logo-small.png" alt="Logo" width="30" height="30">
+						<img src="assets/img/logo.PNG" alt="Logo" width="30" height="30" >
 					</a>
                 </div>
 				<!-- /Logo -->
 				
 				<a href="javascript:void(0);" id="toggle_btn">
-					<i class="fe fe-text-align-left"></i>
+					<i class="fe fe-text-align-right     "></i>
 				</a>
-				
-
-				
 				<!-- Mobile Menu Toggle -->
 				<a class="mobile_btn" id="mobile_btn">
 					<i class="fa fa-bars"></i>
@@ -38,7 +35,6 @@ if(!isset($_SESSION['auser']))
 
 					
 					<!-- User Menu -->
-					<!-- <h4 style="color:white;margin-top:13px;text-transform:capitalize;"><?php echo $_SESSION['auser'];?></h4> -->
 					<li class="nav-item dropdown app-dropdown">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
 							<span class="user-img"><img class="rounded-circle" src="assets/img/profiles/1.png" width="31" alt="Ryan Taylor"></span>
@@ -71,29 +67,25 @@ if(!isset($_SESSION['auser']))
 			
 			
 						<!-- Sidebar -->
-            <div class="sidebar" id="sidebar">
-                <div class="sidebar-inner slimscroll">
-					<div id="sidebar-menu" class="sidebar-menu">
+            <div class="sidebar" id="sidebar hover">
+                <div class="sidebar-inner slimscroll ">
+					<div id="sidebar-menu" class="sidebar-menu hover">
+						<style>
+							.sidebar{
+							}
+							#sidebar-menu :hover{
+								
+								color: black;
+							}
+							
+						</style>
 						<ul>
 							<li class="menu-title "> 
-								<span>Main</span>
+								<span >Main</span>
 							</li>
 							<li> 
 								<a href="dashboard.php"><i class="fe fe-home"></i> <span>Dashboard</span></a>
 							</li>
-							
-							 <!-- <li class="menu-title"> 
-								<span>Authentication</span>
-							</li>
-						
-							<li class="submenu">
-								<a href="#"><i class="fe fe-user"></i> <span> Authentication </span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-									<li><a href="index.php"> Login </a></li>
-									<li><a href="register.php"> Register </a></li>
-									
-								</ul>
-							</li> -->
 							<li class="menu-title"> 
 								<span>All Users</span>
 							</li>
@@ -136,10 +128,13 @@ if(!isset($_SESSION['auser']))
 								<span>Query</span>
 							</li>
 							<li class="submenu">
-								<a href="#"><i class="fe fe-comment"></i> <span> Contact,Feedback </span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fe fe-comment"></i> <span> Contact,Feedback, <br>
+									Request </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li><a href="contactview.php"> Contact </a></li>
 									<li><a href="feedbackview.php"> Feedback </a></li>
+									<li><a href="requestview.php"> Request For Booking </a></li>
+
 								</ul>
 							</li>
 							<li class="menu-title"> 

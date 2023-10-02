@@ -95,7 +95,7 @@ if(isset($_POST['add']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>LM HOMES | Property</title>
+        <title>Property</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/1.png">
@@ -111,11 +111,7 @@ if(isset($_POST['add']))
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
-		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+		<link rel="stylesheet" href="assets/css/propertystyle.css">
     </head>
     <body>
 
@@ -125,7 +121,7 @@ if(isset($_POST['add']))
 			<!-- /Sidebar -->
 			
 			<!-- Page Wrapper -->
-            <div class="page-wrapper">
+            <div class="page-wrapper" style="background-color: bisque;">
                 <div class="content container-fluid">
 				
 					<!-- Page Header -->

@@ -6,7 +6,7 @@ $result = mysqli_query($con, $sql);
 if($result == true)
 {
 	$msg="<p class='alert alert-success'>State Deleted</p>";
-	header("Location:stateadd.php?msg=$msg");
+	header("Location:statelist.php?msg=$msg");
 }
 else{
 	$msg="<p class='alert alert-warning'>State Not Deleted</p>";

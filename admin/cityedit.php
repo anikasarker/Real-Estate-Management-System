@@ -22,7 +22,7 @@ if(isset($_POST['insert']))
 		if($result)
 			{
 				$msg="<p class='alert alert-success'>City Updated</p>";
-				header("Location:cityadd.php?msg=$msg");
+				header("Location:citylist.php?msg=$msg");
 			}
 			else
 			{
@@ -42,7 +42,7 @@ if(isset($_POST['insert']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Ventura - Data Tables</title>
+        <title>City</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/profiles/1.png">
@@ -64,11 +64,8 @@ if(isset($_POST['insert']))
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
-		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+		<link rel="stylesheet" href="assets/css/citystatestyle.css">
+
     </head>
     <body>
 	
@@ -80,17 +77,17 @@ if(isset($_POST['insert']))
 			<!-- /Sidebar -->
 			
 			<!-- Page Wrapper -->
-            <div class="page-wrapper">
-                <div class="content container-fluid">
+            <div class="page-wrapper" style="background-color: bisque;">
+                <div class="content container-fluid" >
 
 					<!-- Page Header -->
-					<div class="page-header">
-						<div class="row">
-							<div class="col">
-								<h3 class="page-title">State</h3>
-								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-									<li class="breadcrumb-item active">State</li>
+					<div class="page-header" >
+						<div class="row" >
+							<div class="col" >
+								<h3 class="page-title  bg     " >City</h3>
+								<ul class="breadcrumb" >
+									<li class="breadcrumb-item" ><a href="dashboard.php">Dashboard</a></li>
+									<li class="breadcrumb-item active" >State</li>
 								</ul>
 							</div>
 						</div>
@@ -101,8 +98,8 @@ if(isset($_POST['insert']))
 					<div class="row">
 						<div class="col-md-12">
 							<div class="card">
-								<div class="card-header">
-									<h1 class="card-title">Add City</h1>
+								<div class="card-header" >
+									<h3 class="card-title   " >Add City</h3>
 									<?php echo $error;?>
 									<?php echo $msg;?>
 									<?php 
@@ -118,12 +115,12 @@ if(isset($_POST['insert']))
 								{
 								?>
 								<form method="post">
-									<div class="card-body">
+									<div class="card-body      ">
 											<div class="row">
 												<div class="col-xl-6">
-													<h5 class="card-title">City Details</h5>
+													<h5 class="card-title bg    " >City Details</h5>
 													<div class="form-group row">
-														<label class="col-lg-3 col-form-label">State Name</label>
+														<label class="col-lg-3 col-form-label" >State Name</label>
 														<div class="col-lg-9" >	
 															<select class="form-control" name="ustate">
 																<option value="">Select</option>

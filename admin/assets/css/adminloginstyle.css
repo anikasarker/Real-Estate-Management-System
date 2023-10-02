@@ -1,0 +1,22 @@
+*{
+    font-family: 'Marcellus SC', serif;
+
+}
+html {
+    height: 100%;
+  }
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: 'Marcellus SC', serif;
+        font-size: 1rem;
+    height: 100%;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  h3,
+  h2,h4,h1 {
+    font-family: 'Marcellus SC', serif;
+    margin-top: 0;
+    
+}

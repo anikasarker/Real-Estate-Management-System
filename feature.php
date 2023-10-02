@@ -21,13 +21,11 @@ if(!isset($_SESSION['uemail']))
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="shortcut icon" href="images/favicon.ico">
 
-<!--	Fonts
-	========================================================-->
+<!--	Fonts-->
 <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,600,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
 
-<!--	Css Link
-	========================================================-->
+<!--	Css Link-->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap-slider.css">
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
@@ -39,24 +37,10 @@ if(!isset($_SESSION['uemail']))
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
 
-<!--	Title
-	=========================================================-->
+<!--	Title-->
 <title>Real Estate Management System</title>
 </head>
 <body>
-
-<!--	Page Loader
-=============================================================
-<div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
-	<div class="d-flex justify-content-center y-middle position-relative">
-	  <div class="spinner-border" role="status">
-		<span class="sr-only">Loading...</span>
-	  </div>
-	</div>
-</div>
---> 
-
-
 <div id="page-wrapper">
     <div class="row"> 
         <!--	Header start  -->
@@ -154,8 +138,7 @@ if(!isset($_SESSION['uemail']))
 </div>
 <!-- Wrapper End --> 
 
-<!--	Js Link
-============================================================--> 
+<!--	Js Link--> 
 <script src="js/jquery.min.js"></script> 
 <!--jQuery Layer Slider --> 
 <script src="js/greensock.js"></script> 

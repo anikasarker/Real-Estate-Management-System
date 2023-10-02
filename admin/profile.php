@@ -14,7 +14,7 @@ if(!isset($_SESSION['auser']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>LM HOMES | Profile</title>
+        <title>Admin Profile</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/profiles/1.png">
@@ -30,11 +30,6 @@ if(!isset($_SESSION['auser']))
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
-		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
     </head>
     <body>
 	
@@ -46,7 +41,7 @@ if(!isset($_SESSION['auser']))
 			<!-- /Header -->
 			
 			<!-- Page Wrapper -->
-            <div class="page-wrapper">
+            <div class="page-wrapper" style="background-color: bisque;">
                 <div class="content container-fluid">
 					
 					<!-- Page Header -->
@@ -95,9 +90,6 @@ if(!isset($_SESSION['auser']))
 									<li class="nav-item">
 										<a class="nav-link active" data-toggle="tab" href="#per_details_tab">About</a>
 									</li>
-								<!--	<li class="nav-item">
-										<a class="nav-link" data-toggle="tab" href="#password_tab">Password</a>
-									</li>  -->
 								</ul>
 							</div>	
 							<div class="tab-content profile-tab-cont">
@@ -151,38 +143,7 @@ if(!isset($_SESSION['auser']))
 									<!-- /Personal Details -->
 
 								</div>
-								<!-- /Personal Details Tab -->
-								
-								<!-- Change Password Tab -->
-								 <!-- <div id="password_tab" class="tab-pane fade">
-								
-									<div class="card">
-										<div class="card-body">
-											<h5 class="card-title">Change Password</h5>
-											<div class="row">
-												<div class="col-md-10 col-lg-6">
-													<form method="post">
-														<div class="form-group">
-															<label>Old Password</label>
-															<input type="password" class="form-control">
-														</div>
-														<div class="form-group">
-															<label>New Password</label>
-															<input type="password" class="form-control">
-														</div>
-														<div class="form-group">
-															<label>Confirm Password</label>
-															<input type="password" class="form-control">
-														</div>
-														<button class="btn btn-primary" type="submit">Save Changes</button>
-													</form>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div> -->
-								<!-- /Change Password Tab -->
-								
+							
 							</div>
 						</div>
 					</div>

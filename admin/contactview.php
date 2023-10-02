@@ -14,7 +14,7 @@ if(!isset($_SESSION['auser']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>LM Homes | Admin</title>
+        <title>Contact Information</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/profiles/1.png">
@@ -36,11 +36,7 @@ if(!isset($_SESSION['auser']))
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
-		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+		<link rel="stylesheet" href="assets/css/contactfeedstyle.css">
     </head>
     <body>
 	
@@ -52,14 +48,14 @@ if(!isset($_SESSION['auser']))
 			<!-- /Sidebar -->
 			
 			<!-- Page Wrapper -->
-            <div class="page-wrapper">
+            <div class="page-wrapper" style="background-color: bisque;">
                 <div class="content container-fluid">
 
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">Contact</h3>
+								<h3 class="page-title bg   ">Contact</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
 									<li class="breadcrumb-item active">Contact</li>
@@ -69,13 +65,11 @@ if(!isset($_SESSION['auser']))
 					</div>
 					<!-- /Page Header -->
 					
-					
-					
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="card">
 								<div class="card-header">
-									<h4 class="card-title">Contact List</h4>
+									<h4 class="card-title  bg   ">Contact List</h4>
 									<?php 
 											if(isset($_GET['msg']))	
 											echo $_GET['msg'];
@@ -84,7 +78,7 @@ if(!isset($_SESSION['auser']))
 								</div>
 								<div class="card-body">
 
-									<table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
+									<table id="datatable-buttons"  class="table table-bordered ">
                                             <thead>
                                                 <tr>
                                                     <th>#</th>

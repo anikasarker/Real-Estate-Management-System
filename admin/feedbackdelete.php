@@ -5,7 +5,7 @@ $sql = "DELETE FROM feedback WHERE fid = {$fid}";
 $result = mysqli_query($con, $sql);
 if($result == true)
 {
-	$msg="<p class='alert alert-success'>Feedback Deleted</p>";
+	$msg="<p class='alert alert-info'>Feedback Deleted</p>";
 	header("Location:feedbackview.php?msg=$msg");
 }
 else{

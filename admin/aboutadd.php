@@ -12,22 +12,17 @@ $error="";
 $msg="";
 if(isset($_POST['addabout']))
 {
-	
 	$title=$_POST['title'];
 	$content=$_POST['content'];
 	$aimage=$_FILES['aimage']['name'];
-	
 	$temp_name1 = $_FILES['aimage']['tmp_name'];
-
-
 	move_uploaded_file($temp_name1,"upload/$aimage");
-	
+
 	$sql="insert into about (title,content,image) values('$title','$content','$aimage')";
 	$result=mysqli_query($con,$sql);
 	if($result)
 		{
 			$msg="<p class='alert alert-success'>Inserted Successfully</p>";
-					
 		}
 		else
 		{
@@ -42,7 +37,7 @@ if(isset($_POST['addabout']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>LM HOMES | About</title>
+        <title>About</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/profiles/1.png">
@@ -61,11 +56,8 @@ if(isset($_POST['addabout']))
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/about.css">
 		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
     </head>
     <body>
 	
@@ -73,10 +65,8 @@ if(isset($_POST['addabout']))
 		
 			<!-- Header -->
 			<?php include("header.php"); ?>
-			<!-- /Sidebar -->
-			
 			<!-- Page Wrapper -->
-            <div class="page-wrapper">
+            <div class="page-wrapper" >
 			
 				<div class="content container-fluid">
 
@@ -84,7 +74,7 @@ if(isset($_POST['addabout']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">About</h3>
+								<h3 class="page-title    ">About</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
 									<li class="breadcrumb-item active">About</li>
@@ -98,7 +88,7 @@ if(isset($_POST['addabout']))
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
-									<h2 class="card-title">About Us</h2>
+									<h2 class="card-title  ">About Us</h2>
 								</div>
 								<form method="post" enctype="multipart/form-data">
 								<div class="card-body">

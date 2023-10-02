@@ -38,7 +38,7 @@ if(isset($_REQUEST['insert']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Ventura - Register</title>
+        <title>Admin Register</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/profiles/1.png">
@@ -51,11 +51,8 @@ if(isset($_REQUEST['insert']))
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
-		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+		<link rel="stylesheet" href="assets/css/adminloginstyle.css">
+
     </head>
     <body>
 	
@@ -98,16 +95,6 @@ if(isset($_REQUEST['insert']))
 									<span class="or-line"></span>
 									<span class="span-or">or</span>
 								</div>
-								
-								<!-- Social Login -->
-								<div class="social-login">
-									<span>Register with</span>
-									<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-									<a href="#" class="google"><i class="fa fa-google"></i></a>
-									<a href="#" class="facebook"><i class="fa fa-twitter"></i></a>
-									<a href="#" class="google"><i class="fa fa-instagram"></i></a>
-								</div>
-								<!-- /Social Login -->
 								
 								<div class="text-center dont-have">Already have an account? <a href="index.php">Login</a></div>
 							</div>

@@ -19,6 +19,8 @@ if(isset($_POST['insert']))
 		if($result)
 			{
 				$msg="<p class='alert alert-success'>City Inserted Successfully</p>";
+				header('location:citylist.php');
+
 						
 			}
 			else
@@ -38,7 +40,7 @@ if(isset($_POST['insert']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Ventura - Data Tables</title>
+        <title>City</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/profiles/1.png">
@@ -60,11 +62,8 @@ if(isset($_POST['insert']))
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/citystatestyle.css">
 		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
     </head>
     <body>
 	
@@ -76,14 +75,14 @@ if(isset($_POST['insert']))
 			<!-- /Sidebar -->
 			
 			<!-- Page Wrapper -->
-            <div class="page-wrapper">
+            <div class="page-wrapper" style="background-color: bisque;">
                 <div class="content container-fluid">
 
 					<!-- Page Header -->
-					<div class="page-header">
-						<div class="row">
-							<div class="col">
-								<h3 class="page-title">City</h3>
+					<div class="page-header" >
+						<div class="row" >
+							<div class="col bg " >
+								<h3 class="page-title   text  "  style="font-size:xx-large;">City</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
 									<li class="breadcrumb-item active">State</li>
@@ -97,8 +96,8 @@ if(isset($_POST['insert']))
 					<div class="row">
 						<div class="col-md-12">
 							<div class="card">
-								<div class="card-header">
-									<h1 class="card-title">Add City</h1>
+								<div class="card-header   bg text-bold   " >
+									<h4 class="card-title">Add City</h4>
 									<?php echo $error;?>
 									<?php echo $msg;?>
 									<?php 
@@ -110,9 +109,9 @@ if(isset($_POST['insert']))
 									<div class="card-body">
 											<div class="row">
 												<div class="col-xl-6">
-													<h5 class="card-title">City Details</h5>
+													<h5 class="card-title  bg  ">City Details</h5>
 													<div class="form-group row">
-														<label class="col-lg-3 col-form-label">State Name</label>
+														<label class="col-lg-3 col-form-label  bg  ">State Name</label>
 														<div class="col-lg-9" >	
 															<select class="form-control" name="state">
 																<option value="">Select</option>
@@ -127,15 +126,15 @@ if(isset($_POST['insert']))
 														</div>
 													</div>
 													<div class="form-group row">
-														<label class="col-lg-3 col-form-label">City Name</label>
+														<label class="col-lg-3 col-form-label  bg  " >City Name</label>
 														<div class="col-lg-9">
-															<input type="text" class="form-control" name="city">
+															<input type="text" class="form-control" name="city" >
 														</div>
 													</div>
 												</div>
 											</div>
 											<div class="text-left">
-												<input type="submit" class="btn btn-info"  value="Submit" name="insert" style="margin-left:200px;">
+												<input type="submit" class="btn btn-info"  value="Submit" name="insert" style="margin-left:200px; ">
 											</div>
 									</div>
 								</form>
@@ -144,54 +143,7 @@ if(isset($_POST['insert']))
 					</div>
 				<!----End City add section  --->
 				
-				<!----view city  --->
-				<div class="row">
-						<div class="col-sm-12">
-							<div class="card">
-								<div class="card-header">
-									<h4 class="card-title">City List</h4>
-									
-								</div>
-								<div class="card-body">
-
-									<table id="basic-datatable" class="table table-bordered table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>City</th>
-													<!-- <th>State ID</th> -->
-													<th>State</th>
-													<th>Actions</th>
-                                                </tr>
-                                            </thead>
-                                        
-                                        
-                                            <tbody>
-											<?php
-													
-												$query=mysqli_query($con,"select city.*,state.sname from city,state where city.sid=state.sid");
-												$cnt=1;
-												while($row=mysqli_fetch_array($query))
-													{
-											?>
-                                                <tr>
-                                                    
-                                                    <td><?php echo $cnt; ?></td>
-                                                    <td><?php echo $row['1']; ?></td>
-													<!-- <td><?php echo $row['2']; ?></td> -->
-													<td><?php echo $row['sname']; ?></td>
-													<td><a href="cityedit.php?id=<?php echo $row['0']; ?>"><button class="btn btn-info">Edit</button></a>
-                                                   <a href="citydelete.php?id=<?php echo $row['0']; ?>"><button class="btn btn-danger">Delete</button></a></td>
-                                                </tr>
-                                                <?php $cnt=$cnt+1; } ?>
-
-                                            </tbody>
-                                        </table>
-								</div>
-							</div>
-						</div>
-					</div>
-				<!-- view City -->
+				
 				</div>			
 			</div>
 			<!-- /Main Wrapper -->

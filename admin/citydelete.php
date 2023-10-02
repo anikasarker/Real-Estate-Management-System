@@ -6,7 +6,7 @@ $result = mysqli_query($con, $sql);
 if($result == true)
 {
 	$msg="<p class='alert alert-success'>City Deleted</p>";
-	header("Location:cityadd.php?msg=$msg");
+	header("Location:citylist.php?msg=$msg");
 }
 else{
 	$msg="<p class='alert alert-warning'>City Not Deleted</p>";

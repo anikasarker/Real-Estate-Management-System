@@ -14,7 +14,7 @@ if(!isset($_SESSION['auser']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Ventura - Data Tables</title>
+        <title>Property</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/.png">
@@ -36,11 +36,8 @@ if(!isset($_SESSION['auser']))
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
-		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+		<link rel="stylesheet" href="assets/css/propertystyle.css">
+
     </head>
     <body>
 	
@@ -52,14 +49,14 @@ if(!isset($_SESSION['auser']))
 			<!-- /Sidebar -->
 			
 			<!-- Page Wrapper -->
-            <div class="page-wrapper">
+            <div class="page-wrapper" style="background-color: bisque;">
                 <div class="content container-fluid">
 
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">Property</h3>
+								<h3 class="page-title bg ">Property</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
 									<li class="breadcrumb-item active">Property</li>
@@ -68,22 +65,19 @@ if(!isset($_SESSION['auser']))
 						</div>
 					</div>
 					<!-- /Page Header -->
-					
-					
-					
-					
+				
 					<div class="row">
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
 
-                                        <h4 class="header-title mt-0 mb-4">Property View</h4>
+                                        <h4 class="header-title mt-0 mb-4  bg  " >Property View</h4>
 										<?php 
 											if(isset($_GET['msg']))	
 											echo $_GET['msg'];	
 										?>
-                                        <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
-                                            <thead>
+                                        <table id="basic-datatable" class="table table-bordered ">
+                                            <thead >
                                                 <tr>
                                                     <!-- <th>P ID</th> -->
                                                     <th>Title</th>
@@ -94,15 +88,11 @@ if(!isset($_SESSION['auser']))
                                                     <th>Price</th>
                                                     <th>Location</th>
 													<th>Status</th>
-                                                   
-                                                    
-                                                    <th>Added Date and Time</th>
+                                                    <th>Date & Time</th>
 													<th>Actions</th>
 
-                                                    
                                                 </tr>
                                             </thead>
-                                        
                                         
                                             <tbody>
 												<?php
@@ -122,14 +112,11 @@ if(!isset($_SESSION['auser']))
                                                     <td><?php echo $row['12']; ?></td>
                                                     <td><?php echo $row['13']; ?></td>
                                                     <td><?php echo $row['14']; ?></td>
-													
-                                                   
                                                     <td><?php echo $row['24']; ?></td>
-													
-                                                    
                                                     <td><?php echo $row['29']; ?></td>
-													<td><a href="propertyedit.php?id=<?php echo $row['0'];?>"><button class="btn btn-info">Edit</button></a>
-                                                    <a href="propertydelete.php?id=<?php echo $row['0'];?>"><button class="btn btn-danger">Delete</button></a></td>
+													<td><a href="propertyedit.php?id=<?php echo $row['0'];?>"><button class="btn btn-info" style="padding:7px 20px ;" >Edit</button></a>
+                                                    <a href="propertydelete.php?id=<?php echo $row['0'];?>"><button class="btn btn-danger">Delete</button></a>
+											</td>
                                                 </tr>
                                                <?php
 												} 

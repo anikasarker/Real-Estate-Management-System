@@ -36,7 +36,7 @@ if(isset($_POST['update']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>LM HOMES | About</title>
+        <title>Feedback</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -55,11 +55,7 @@ if(isset($_POST['update']))
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
-		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+		<link rel="stylesheet" href="assets/css/contactfeedstyle.css">
     </head>
     <body>
 	
@@ -70,7 +66,7 @@ if(isset($_POST['update']))
 			<!-- /Sidebar -->
 			
 			<!-- Page Wrapper -->
-            <div class="page-wrapper">
+            <div class="page-wrapper" style="background-color: bisque;">
 			
 				<div class="content container-fluid">
 
@@ -78,7 +74,7 @@ if(isset($_POST['update']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">Feedback</h3>
+								<h3 class="page-title   bg   ">Feedback</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
 									<li class="breadcrumb-item active">Feedback</li>
@@ -92,7 +88,7 @@ if(isset($_POST['update']))
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
-									<h2 class="card-title">Update Feedback</h2>
+									<h3 class="card-title  text-left  ">Update Feedback</h3>
 								</div>
 								<?php 
 								$fid = $_GET['id'];
@@ -105,7 +101,7 @@ if(isset($_POST['update']))
 								<div class="card-body">
 										<div class="row">
 											<div class="col-xl-12">
-												<h5 class="card-title">Update Feedback</h5>
+												<h5 class="card-title  bg  ">Update Feedback</h5>
 												
 												<?php echo $msg; ?>
 												<div class="form-group row">

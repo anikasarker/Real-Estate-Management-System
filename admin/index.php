@@ -1,6 +1,5 @@
 <?php
 session_start();
-require 'config.php';
 include "config.php";
 $error = "";
 if (isset($_POST['login'])) {
@@ -44,12 +43,7 @@ if (isset($_POST['login'])) {
 
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
-
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
-
+        <link rel="stylesheet" href="assets/css/adminloginstyle.css">
     </head>
     <body>
 
@@ -60,10 +54,10 @@ if (isset($_POST['login'])) {
                 	<div class="loginbox bg-gray">
                         <div class="login-right">
 							<div class="login-right-wrap">
-								<h1>Admin Login Panel</h1>
+								<h1>Admin Login</h1>
 								<p class="account-subtitle">Access to dashboard</p>
 								<p style="color:red;"><?php echo $error; ?></p>
-								<!-- Form -->
+								
 								<form method="post">
 									<div class="form-group">
 										<input class="form-control" name="user" required type="text" placeholder="User Name">
@@ -75,8 +69,7 @@ if (isset($_POST['login'])) {
 										<button class="btn btn-info btn-block" name="login" type="submit">Login</button>
 									</div>
 								</form>
-
-
+                                
 							</div>
                         </div>
                     </div>

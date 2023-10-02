@@ -14,7 +14,7 @@ if(!isset($_SESSION['auser']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>LM Homes | Admin</title>
+        <title>Feedback</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/1.png">
@@ -36,11 +36,8 @@ if(!isset($_SESSION['auser']))
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
-		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+		<link rel="stylesheet" href="assets/css/contactfeedstyle.css">
+
     </head>
     <body>
 	
@@ -52,14 +49,14 @@ if(!isset($_SESSION['auser']))
 			<!-- /Sidebar -->
 			
 			<!-- Page Wrapper -->
-            <div class="page-wrapper">
+            <div class="page-wrapper" style="background-color: bisque;">
                 <div class="content container-fluid">
 
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">Feedback</h3>
+								<h3 class="page-title  bg  ">Feedback</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
 									<li class="breadcrumb-item active">Feedback</li>
@@ -73,8 +70,8 @@ if(!isset($_SESSION['auser']))
 						<div class="col-sm-12">
 							<div class="card">
 								<div class="card-header">
-									<h4 class="card-title">Feedback List</h4>
-									<small>Here, admin can select feedbacks for displaying as testimonial. Note: Status "1" sets the feedback as testimonial.</small>
+									<h4 class="card-title  bg   ">Feedback List</h4>
+									<small>Admin can select feedbacks for displaying as testimonial. Note: Status "1" sets the feedback as testimonial.</small>
 									<?php 
 											if(isset($_GET['msg']))	
 											echo $_GET['msg'];
@@ -83,7 +80,7 @@ if(!isset($_SESSION['auser']))
 								</div>
 								<div class="card-body">
 
-									<table id="basic-datatable" class="table table-bordered table-hover">
+									<table id="basic-datatable" class="table table-bordered ">
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
@@ -110,7 +107,7 @@ if(!isset($_SESSION['auser']))
                                                     <td><?php echo $row['uemail']; ?></td>
                                                     <td><?php echo $row['2']; ?></td>
                                                     <td><?php echo $row['3']; ?></td>
-													<td><a href="feedbackedit.php?id=<?php echo $row['0']; ?>"><button class="btn btn-info">Edit</button></a>
+													<td><a href="feedbackedit.php?id=<?php echo $row['0']; ?>" ><button class="btn btn-info"  >Edit</button></a>
                                                     <a href="feedbackdelete.php?id=<?php echo $row['0']; ?>"><button class="btn btn-danger">Delete</button></a></td>
                                                 </tr>
                                                 <?php

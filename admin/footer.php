@@ -6,8 +6,8 @@
                             <div class="row">
                                 <div class="col-md-12 col-lg-4">
                                     <div class="footer-widget mb-4">
-                                        <div class="footer-logo mb-4"> <a href="#"><img class="logo-bottom" src="images/logo/restatelg_white.png" alt="image"></a> </div>
-                                        <p class="pb-20 text-white">Risus commodo congue augue phasellus morbi hymenaeos ante tincidunt eu orci dictum bibendum lacus platea primis mi lacinia felis gravida natoque bibendum cubilia montes tristique et arcu blandit risus. Lobortis dignissim nam.</p>
+                                        <div class="footer-logo mb-4"> <a href="#"><img class="logo-bottom" src="assets/img/logo.PNG" alt="image"></a> </div>
+                                        <p class="pb-20 text-white">We always give you the good service and good places.</p>
 										
                                         </div>
                                 </div>
@@ -15,7 +15,7 @@
                                     <div class="row">
                                         <div class="col-md-4 col-lg-4">
                                             <div class="footer-widget footer-nav mb-4">
-                                                <h4 class="widget-title text-white double-down-line-left position-relative">Support</h4>
+                                                <h4 class="widget-title text-white position-relative">Support</h4>
                                                 <ul class="hover-text-primary">
                                                     <li><a href="#" class="text-white">Forum</a></li>
                                                     <li><a href="#" class="text-white">Terms and Condition</a></li>
@@ -26,7 +26,7 @@
                                         </div>
                                         <div class="col-md-4 col-lg-4">
                                             <div class="footer-widget footer-nav mb-4">
-                                                <h4 class="widget-title text-white double-down-line-left position-relative">Quick Links</h4>
+                                                <h4 class="widget-title text-white  position-relative">Quick Links</h4>
                                                 <ul class="hover-text-primary">
                                                     <li><a href="about.php" class="text-white">About Us</a></li>
                                                     <li><a href="#" class="text-white">Featured Property</a></li>
@@ -37,7 +37,7 @@
                                         </div>
                                         <div class="col-md-4 col-lg-4">
                                             <div class="footer-widget">
-                                                <h4 class="widget-title text-white double-down-line-left position-relative">Contact Us</h4>
+                                                <h4 class="widget-title text-white  position-relative">Contact Us</h4>
                                                 <ul class="text-white">
                                                     <li class="hover-text-primary"><i class="fas fa-map-marker-alt text-white mr-2 font-13 mt-1"></i>Uttara Sector 10, Dhaka</li>
                                                     <li class="hover-text-primary"> <i class="fas fa-phone-alt text-white mr-2 font-13 mt-1"></i>01987818351</li>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="row copyright">
-                    <div class="col-sm-6"> <span class="text-white">© <?php echo date('Y');?> Real Estate Management System - Developed By Hosna Ara Sarker Anika</span> </div>
+                    <div class="col-sm-6"> <span class="text-white"> <?php echo date('Y');?> Real Estate Management System - Developed By Hosna Ara Sarker Anika</span> </div>
                     <div class="col-sm-6">
                         <ul class="line-menu text-white hover-text-primary float-right">
                             <li><a href="#">Privacy & Policy</a></li>

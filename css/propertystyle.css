@@ -1,0 +1,76 @@
+*{
+    font-family: 'Marcellus SC', serif;
+
+}
+html {
+    height: 100%;
+  }
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: 'Marcellus SC', serif;
+        font-size: 1rem;
+    height: 100%;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  h3,
+  h2,h4,h5,h1 {
+    font-family: 'Marcellus SC', serif;
+    margin-top: 0;
+    
+}
+h1 {
+    font-family: 'Marcellus SC', serif;
+    margin-top: 0;
+  text-align: center;
+}
+.full-row {
+    position: relative;
+    width: 100%;
+    padding: 50px 0;
+  }
+  .banner-full-row {
+    position: relative;
+    width: 100%;
+    padding: 100px 0;
+  }
+  .featured-thumb .featured {
+    position: absolute;
+    top: 30px;
+    left: -50px;
+    z-index: 99;
+    width: 200px;
+    line-height: 30px;
+    text-align: center;
+    -webkit-transform: rotate(-42deg);
+    -o--transform: rotate(-42deg);
+    -moz--transform: rotate(-42deg);
+    -ms--transform: rotate(-42deg);
+    transform: rotate(-42deg);
+  }
+  .featured-thumb .sale {
+    padding: 5px 15px;
+    border-radius: 8px;
+    z-index: 99;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  .featured-thumb .price,
+  .featured-thumb .appartment {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 99;
+    font-size: 21px;
+  }
+  .featured-thumb .price.right {
+    left: inherit;
+    right: 20px;
+  }
+  .featured-thumb .price span {
+    font-size: 13px;
+    display: block;
+  }
+  

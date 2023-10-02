@@ -18,7 +18,7 @@ if(isset($_POST['insert']))
 	if($result)
 		{
 			$msg="<p class='alert alert-success'>State Updated</p>";
-			header("Location:stateadd.php?msg=$msg");
+			header("Location:statelist.php?msg=$msg");
 		}
 		else
 		{
@@ -55,31 +55,27 @@ if(isset($_POST['insert']))
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
-		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+		<link rel="stylesheet" href="assets/css/citystatestyle.css">
+
     </head>
     <body>
 	
 		<!-- Main Wrapper -->
-
 		
 			<!-- Header -->
 			<?php include("header.php");?>	
 			<!-- /Sidebar -->
 			
 			<!-- Page Wrapper -->
-            <div class="page-wrapper">
+            <div class="page-wrapper" style="background-color: bisque;">
                 <div class="content container-fluid">
 
 					<!-- Page Header -->
-					<div class="page-header">
-						<div class="row">
+					<div class="page-header ">
+						<div class="row" >
 							<div class="col">
-								<h3 class="page-title">State</h3>
-								<ul class="breadcrumb">
+								<h3 class="page-title  bg    " >State</h3>
+								<ul class="breadcrumb" >
 									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
 									<li class="breadcrumb-item active">State</li>
 								</ul>
@@ -92,8 +88,8 @@ if(isset($_POST['insert']))
 					<div class="row">
 						<div class="col-md-12">
 							<div class="card">
-								<div class="card-header">
-									<h1 class="card-title">Add State</h1>
+								<div class="card-header bg    " >
+									<h4 class="card-title">Add State</h4>
 									
 								</div>
 								<?php 
@@ -117,7 +113,7 @@ if(isset($_POST['insert']))
 												</div>
 											</div>
 											<div class="text-left">
-												<input type="submit" class="btn btn-primary"  value="Submit" name="insert" style="margin-left:200px;">
+												<input type="submit" class="btn btn-primary"  value="Submit" name="insert" style="margin-left:200px;" ></a>
 											</div>
 									</div>
 								</form>

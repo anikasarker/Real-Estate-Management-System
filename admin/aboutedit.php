@@ -38,7 +38,7 @@ if(isset($_POST['update']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Ventura - Vertical Form</title>
+        <title>About</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/profiles/1.png">
@@ -58,22 +58,17 @@ if(isset($_POST['update']))
 		<link rel="stylesheet" href="assets\plugins\summernote\dist\summernote-bs4.css">
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/about.css">
 		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
     </head>
     <body>
 	
 		<!-- Main Wrapper -->
 		
 			<!-- Header -->
-			<?php include("header.php"); ?>
-			<!-- /Sidebar -->
-			
+			<?php include("header.php"); ?>			
 			<!-- Page Wrapper -->
-            <div class="page-wrapper">
+            <div class="page-wrapper" style="background-color: bisque;">
 			
 				<div class="content container-fluid">
 
@@ -81,7 +76,7 @@ if(isset($_POST['update']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">About</h3>
+								<h3 class="page-title  ">About</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
 									<li class="breadcrumb-item active">About</li>

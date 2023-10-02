@@ -18,6 +18,7 @@ if(isset($_POST['insert']))
 		if($result)
 			{
 				$msg="<p class='alert alert-success'>State Inserted Successfully</p>";
+				header('location:statelist.php');
 						
 			}
 			else
@@ -37,7 +38,7 @@ if(isset($_POST['insert']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Ventura - Data Tables</title>
+        <title>State</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/1.png">
@@ -59,32 +60,24 @@ if(isset($_POST['insert']))
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
-		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+		<link rel="stylesheet" href="assets/css/citystatestyle.css">
     </head>
     <body>
 	
 		<!-- Main Wrapper -->
-
 		
-			<!-- Header -->
 			<?php include("header.php");?>	
-			<!-- /Sidebar -->
-			
 			<!-- Page Wrapper -->
-            <div class="page-wrapper">
+            <div class="page-wrapper" style="background-color: bisque;">
                 <div class="content container-fluid">
 
 					<!-- Page Header -->
-					<div class="page-header">
+					<div class="page-header bg  ">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">State</h3>
+								<h3 class="page-title " style ="  ">State</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+									<li class="breadcrumb-item "><a href="dashboard.php">Dashboard</a></li>
 									<li class="breadcrumb-item active">State</li>
 								</ul>
 							</div>
@@ -95,9 +88,9 @@ if(isset($_POST['insert']))
 				<!-- state add section --> 
 					<div class="row">
 						<div class="col-md-12">
-							<div class="card">
-								<div class="card-header">
-									<h1 class="card-title">Add State</h1>
+							<div class="card ">
+								<div class="card-header bg ">
+									<h4 class="card-title " style= " ">Add State</h4>
 									<?php echo $error;?>
 									<?php echo $msg;?>
 									<?php 
@@ -108,10 +101,10 @@ if(isset($_POST['insert']))
 								<form method="post" id="insert product" enctype="multipart/form-data">
 									<div class="card-body">
 											<div class="row">
-												<div class="col-xl-6">
-													<h5 class="card-title">State Details</h5>
+												<div class="col-xl-6 ">
+													<h5 class="card-title" style="  ">State Details</h5>
 													<div class="form-group row">
-														<label class="col-lg-3 col-form-label">State Name</label>
+														<label class="col-lg-3 col-form-label" style=" ">State Name</label>
 														<div class="col-lg-9">
 															<input type="text" class="form-control" name="state">
 														</div>
@@ -119,8 +112,9 @@ if(isset($_POST['insert']))
 												</div>
 											</div>
 											<div class="text-left">
+												<a href="statelist.php"></a>
 												<input type="submit" class="btn btn-info"  value="Submit" name="insert" style="margin-left:200px;">
-											</div>
+												</a></div>
 									</div>
 								</form>
 							</div>
@@ -129,67 +123,10 @@ if(isset($_POST['insert']))
 				<!----End state add section  --->
 				
 				<!----view state  --->
-				<div class="row">
-						<div class="col-sm-12">
-							<div class="card">
-								<div class="card-header">
-									<h4 class="card-title">State List</h4>
-									
-								</div>
-								<div class="card-body">
-
-									<table id="basic-datatable " class="table table-bordered table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>State</th>
-													<th>Actions</th>
-                                                </tr>
-                                            </thead>
-                                        
-                                        
-                                            <tbody>
-											<?php
-													
-												$query=mysqli_query($con,"select * from state");
-												$cnt=1;
-												while($row=mysqli_fetch_row($query))
-													{
-											?>
-                                                <tr>
-                                                    
-                                                    <td><?php echo $cnt; ?></td>
-                                                    <td><?php echo $row['1']; ?></td>
-													<td><a href="stateedit.php?id=<?php echo $row['0']; ?>"><button class="btn btn-info">Edit</button></a>
-                                                    <a href="statedelete.php?id=<?php echo $row['0']; ?>"><button class="btn btn-danger">Delete</button></a></td>
-                                                </tr>
-                                                <?php $cnt=$cnt+1; } ?>
-
-                                            </tbody>
-                                        </table>
-								</div>
-							</div>
-						</div>
-					</div>
-				<!-- view state -->
+				
 				</div>			
 			</div>
 			<!-- /Main Wrapper -->
-			
-			<!--
-			<label class="col-lg-3 col-form-label">State Name</label>
-													<div class="col-lg-9">	
-														<select class="form-control">
-															<option>Select</option>
-															<option>Option 1</option>
-															<option>Option 2</option>
-															<option>Option 3</option>
-															<option>Option 4</option>
-															<option>Option 5</option>
-														</select>
-													</div>
-			
-			---->
 
 		<!-- jQuery -->
         <script src="assets/js/jquery-3.2.1.min.js"></script>
@@ -201,7 +138,6 @@ if(isset($_POST['insert']))
 		<!-- Slimscroll JS -->
         <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 		
-		<!-- Datatables JS -->
 		<!-- Datatables JS -->
 		<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
 		<script src="assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>

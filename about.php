@@ -35,52 +35,22 @@ include("config.php");
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="css/aboutstyle.css">
 
 <!-- Title -->
 <title>Real Estate Management System</title>
 </head>
 <body>
 
-<!--	Page Loader -->
-<!-- <div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
-	<div class="d-flex justify-content-center y-middle position-relative">
-	  <div class="spinner-border" role="status">
-		<span class="sr-only">Loading...</span>
-	  </div>
-	</div>
-</div> -->
-
 <div id="page-wrapper">
     <div class="row"> 
         <!--	Header start  -->
 		<?php include("include/header.php");?>
         <!--	Header end  -->
-        
-        <!--	Banner   --->
-        <!-- <div class="banner-full-row page-banner" style="background-image:url('images/breadcromb.jpg');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>About US</b></h2>
-                    </div>
-                    <div class="col-md-6">
-                        <nav aria-label="breadcrumb" class="float-left float-md-right">
-                            <ol class="breadcrumb bg-transparent m-0 p-0">
-                                <li class="breadcrumb-item text-white"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">About Us</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-         <!--	Banner   --->
-		
         <!--	About Our Company -->
         <div class="full-row">
             <div class="container">
-                
-				
+            
 				<?php 
 					
 					$query=mysqli_query($con,"SELECT * FROM about");
@@ -89,10 +59,10 @@ include("config.php");
 				?>
 				<div class="row">
                     <div class="col-md-12 col-lg-12">
-                        <h3 class="double-down-line-left text-secondary position-relative pb-4 mb-4"><?php echo $row['1'];?></h3>
+                        <h3 class=" text-secondary position-relative pb-4 mb-4"><?php echo $row['1'];?></h3>
                     </div>
                 </div>
-                <div class="row about-company">
+                <div class="row about-company ">
                     <div class="col-md-12 col-lg-7">
                         <div class="about-content">
                             <?php echo $row['2'];?>
@@ -120,8 +90,7 @@ include("config.php");
 </div>
 <!-- Wrapper End --> 
 
-<!--	Js Link
-============================================================--> 
+<!--	Js Link--> 
 <script src="js/jquery.min.js"></script> 
 <!--jQuery Layer Slider --> 
 <script src="js/greensock.js"></script> 

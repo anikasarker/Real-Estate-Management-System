@@ -1,10 +1,10 @@
 <?php
-ini_set('session.cache_limiter', 'public');
-session_cache_limiter(false);
 session_start();
-include "config.php";
-if (!isset($_SESSION['uemail'])) {
-    header("location:login.php");
+require "config.php";
+////code
+
+if (!isset($_SESSION['auser'])) {
+    header("location:index.php");
 }
 
 //// code insert
@@ -30,28 +30,32 @@ if (isset($_POST['add'])) {
     $loc = $_POST['loc'];
     $state = $_POST['state'];
     $status = $_POST['status'];
-    $uid = $_SESSION['uid'];
+    $uid = $_POST['uid'];
     $feature = $_POST['feature'];
 
     $totalfloor = $_POST['totalfl'];
-
-    $isFeatured = $_POST['isFeatured'];
 
     $aimage = $_FILES['aimage']['name'];
     $aimage1 = $_FILES['aimage1']['name'];
     $aimage2 = $_FILES['aimage2']['name'];
     $aimage3 = $_FILES['aimage3']['name'];
     $aimage4 = $_FILES['aimage4']['name'];
+	$aimage5 = $_FILES['aimage5']['name'];
+
 
     $fimage = $_FILES['fimage']['name'];
     $fimage1 = $_FILES['fimage1']['name'];
     $fimage2 = $_FILES['fimage2']['name'];
+
+    $isFeatured = $_POST['isFeatured'];
 
     $temp_name = $_FILES['aimage']['tmp_name'];
     $temp_name1 = $_FILES['aimage1']['tmp_name'];
     $temp_name2 = $_FILES['aimage2']['tmp_name'];
     $temp_name3 = $_FILES['aimage3']['tmp_name'];
     $temp_name4 = $_FILES['aimage4']['tmp_name'];
+	$temp_name5 = $_FILES['aimage5']['tmp_name'];
+
 
     $temp_name5 = $_FILES['fimage']['tmp_name'];
     $temp_name6 = $_FILES['fimage1']['tmp_name'];
@@ -62,110 +66,83 @@ if (isset($_POST['add'])) {
     move_uploaded_file($temp_name2, "property/$aimage2");
     move_uploaded_file($temp_name3, "property/$aimage3");
     move_uploaded_file($temp_name4, "property/$aimage4");
+	move_uploaded_file($temp_name4, "property/$aimage5");
+
 
     move_uploaded_file($temp_name5, "property/$fimage");
     move_uploaded_file($temp_name6, "property/$fimage1");
     move_uploaded_file($temp_name7, "property/$fimage2");
 
-    $sql = "insert into property (title,pcontent,type,bhk,stype,bedroom,bathroom,balcony,kitchen,hall,floor,size,price,location,city,state,feature,pimage,pimage1,pimage2,pimage3,pimage4,uid,status,mapimage,topmapimage,groundmapimage,totalfloor, isFeatured)
-	values('$title','$content','$ptype','$bhk','$stype','$bed','$bath','$balc','$kitc','$hall','$floor','$asize','$price',
-	'$loc','$city','$state','$feature','$aimage','$aimage1','$aimage2','$aimage3','$aimage4','$uid','$status','$fimage','$fimage1','$fimage2','$totalfloor', '$isFeatured')";
+    $sql = "INSERT INTO property (title,pcontent,type,bhk,stype,bedroom,bathroom,balcony,kitchen,hall,floor,size,price,location,city,state,feature,pimage,pimage1,pimage2,pimage3,pimage4,pimage5,uid,status,mapimage,topmapimage,groundmapimage,totalfloor,isFeatured)
+	VALUES('$title','$content','$ptype','$bhk','$stype','$bed','$bath','$balc','$kitc','$hall','$floor','$asize','$price',
+	'$loc','$city','$state','$feature','$aimage','$aimage1','$aimage2','$aimage3','$aimage4','$aimage5','$uid','$status','$fimage','$fimage1','$fimage2','$totalfloor','$isFeatured')";
     $result = mysqli_query($con, $sql);
     if ($result) {
         $msg = "<p class='alert alert-success'>Property Inserted Successfully</p>";
 
     } else {
-        $error = "<p class='alert alert-warning'>Property Not Inserted Some Error</p>";
+        $error = "<p class='alert alert-warning'>Something went wrong. Please try again</p>";
     }
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <title>Property</title>
 
-<!-- Meta Tags -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="shortcut icon" href="images/favicon.ico">
+		<!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
-<!--	Fonts
-	========================================================-->
-<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,600,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
+		<!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-<!--	Css Link
-	========================================================-->
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap-slider.css">
-<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="css/layerslider.css">
-<link rel="stylesheet" type="text/css" href="css/color.css">
-<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
-<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/login.css">
+		<!-- Fontawesome CSS -->
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
-<!--	Title
-	=========================================================-->
-<title>Real Estate Management System</title>
-</head>
-<body>
+		<!-- Feathericon CSS -->
+        <link rel="stylesheet" href="assets/css/feathericon.min.css">
 
-<!--	Page Loader
-=============================================================
-<div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
-	<div class="d-flex justify-content-center y-middle position-relative">
-	  <div class="spinner-border" role="status">
-		<span class="sr-only">Loading...</span>
-	  </div>
-	</div>
-</div>
--->
+		<!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/propertystyle.css">
+
+    </head>
+    <body>
 
 
-<div id="page-wrapper">
-    <div class="row">
-        <!--	Header start  -->
-        <!--	Header end  -->
+			<!-- Header -->
+			<?php include "header.php";?>
+			<!-- /Sidebar -->
 
-        <!--	Banner   --->
-        <!--<div class="banner-full-row page-banner" style="background-image:url('images/breadcromb.jpg');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>Submit Property</b></h2>
-                    </div>
-                    <div class="col-md-6">
-                        <nav aria-label="breadcrumb" class="float-left float-md-right">
-                            <ol class="breadcrumb bg-transparent m-0 p-0">
-                                <li class="breadcrumb-item text-white"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Submit Property</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-         <!--	Banner   --->
+			<!-- Page Wrapper -->
+            <div class="page-wrapper" style="background-color: bisque;">
+                <div class="content container-fluid">
 
-
-		<!--	Submit property   -->
-        <div class="full-row">
-            <div class="container">
-                    <div class="row">
-						<div class="col-lg-12">
-							<h2 class="text-secondary double-down-line text-center">Submit Property</h2>
-                        </div>
+					<!-- Page Header -->
+					<div class="page-header">
+						<div class="row">
+							<div class="col">
+								<h3 class="page-title   bg  " >Property</h3>
+								<ul class="breadcrumb">
+									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+									<li class="breadcrumb-item active">Property</li>
+								</ul>
+							</div>
+						</div>
 					</div>
-                    <div class="row p-5 bg-white">
-                        <form method="post" enctype="multipart/form-data">
-								<div class="description">
-									<h5 class="text-secondary">Basic Information</h5><hr>
+					<!-- /Page Header -->
+
+					<div class="row" >
+						<div class="col-md-12" >
+							<div class="card   bg   ">
+								<div class="card-header" >
+									<h4 class="card-title  bg     " >Add Property Details</h4>
+								</div>
+								<form method="post" enctype="multipart/form-data">
+								<div class="card-body">
+									<h5 class="card-title   bg    " >Property Detail</h5>
 									<?php echo $error; ?>
 									<?php echo $msg; ?>
 
@@ -262,7 +239,7 @@ if (isset($_POST['add'])) {
 
 											</div>
 										</div>
-										<h5 class="text-secondary">Price & Location</h5><hr>
+										<h4 class="card-title">Price & Location</h4>
 										<div class="row">
 											<div class="col-xl-6">
 												<div class="form-group row">
@@ -296,6 +273,7 @@ if (isset($_POST['add'])) {
 														<input type="text" class="form-control" name="state" required placeholder="Enter State">
 													</div>
 												</div>
+
 											</div>
 											<div class="col-xl-6">
 												<div class="form-group row">
@@ -337,14 +315,14 @@ if (isset($_POST['add'])) {
 											</div>
 										</div>
 
-										<div class="form-group row">
+										<div class="form-group row" >
 											<label class="col-lg-2 col-form-label">Feature</label>
 											<div class="col-lg-9">
 											<p class="alert alert-danger">* Important Please Do Not Remove Below Content Only Change <b>Yes</b> Or <b>No</b> or Details and Do Not Add More Details</p>
 
-											<textarea class="tinymce form-control" name="feature" rows="10" cols="30">
+											<textarea class="tinymce form-control" name="feature" rows="10" cols="30" >
 												<!---feature area start--->
-												<div class="col-md-4">
+												<div class="col-md-4" >
 														<ul>
 														<li class="mb-3"><span class="text-secondary font-weight-bold">Property Age : </span>10 Years</li>
 														<li class="mb-3"><span class="text-secondary font-weight-bold">Swiming Pool : </span>Yes</li>
@@ -352,7 +330,7 @@ if (isset($_POST['add'])) {
 														<li class="mb-3"><span class="text-secondary font-weight-bold">GYM : </span>Yes</li>
 														</ul>
 													</div>
-													<div class="col-md-4">
+													<div class="col-md-4"  >
 														<ul>
 														<li class="mb-3"><span class="text-secondary font-weight-bold">Type : </span>Apartment</li>
 														<li class="mb-3"><span class="text-secondary font-weight-bold">Security : </span>Yes</li>
@@ -364,7 +342,7 @@ if (isset($_POST['add'])) {
 													<div class="col-md-4">
 														<ul>
 														<li class="mb-3"><span class="text-secondary font-weight-bold">3rd Party : </span>No</li>
-														<li class="mb-3"><span class="text-secondary font-weight-bold">Elevator : </span>Yes</li>
+														<li class="mb-3"><span class="text-secondary font-weight-bold">Alivator : </span>Yes</li>
 														<li class="mb-3"><span class="text-secondary font-weight-bold">CCTV : </span>Yes</li>
 														<li class="mb-3"><span class="text-secondary font-weight-bold">Water Supply : </span>Ground Water / Tank</li>
 														</ul>
@@ -374,7 +352,7 @@ if (isset($_POST['add'])) {
 											</div>
 										</div>
 
-										<h5 class="text-secondary">Image & Status</h5><hr>
+										<h4 class="card-title">Image & Status</h4>
 										<div class="row">
 											<div class="col-xl-6">
 
@@ -384,6 +362,7 @@ if (isset($_POST['add'])) {
 														<input class="form-control" name="aimage" type="file" required="">
 													</div>
 												</div>
+
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Image 2</label>
 													<div class="col-lg-9">
@@ -397,17 +376,23 @@ if (isset($_POST['add'])) {
 													</div>
 												</div>
 												<div class="form-group row">
+													<label class="col-lg-3 col-form-label">Image5</label>
+													<div class="col-lg-9">
+														<input class="form-control" name="aimage5" type="file" required="">
+													</div>
+												</div>
+												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Status</label>
 													<div class="col-lg-9">
 														<select class="form-control"  required name="status">
 															<option value="">Select Status</option>
-															<option value="available">Available</option>
-															<option value="sold out">Sold Out</option>
+															<option value="Available">Available</option>
+															<option value="Sold out">Sold Out</option>
 														</select>
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Basement Floor Plan Image</label>
+													<label class="col-lg-3 col-form-label">Basement Floor  Image</label>
 													<div class="col-lg-9">
 														<input class="form-control" name="fimage1" type="file">
 													</div>
@@ -427,7 +412,12 @@ if (isset($_POST['add'])) {
 														<input class="form-control" name="aimage3" type="file" required="">
 													</div>
 												</div>
-
+												<div class="form-group row">
+													<label class="col-lg-3 col-form-label">Uid</label>
+													<div class="col-lg-9">
+														<input type="text" class="form-control" name="uid" required placeholder="Enter Number">
+													</div>
+												</div>
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Floor Plan Image</label>
 													<div class="col-lg-9">
@@ -435,7 +425,7 @@ if (isset($_POST['add'])) {
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Ground Floor Plan Image</label>
+													<label class="col-lg-3 col-form-label">Ground Floor Image</label>
 													<div class="col-lg-9">
 														<input class="form-control" name="fimage2" type="file">
 													</div>
@@ -450,7 +440,7 @@ if (isset($_POST['add'])) {
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label"><b>Is Featured?</b></label>
 													<div class="col-lg-9">
-														<select class="form-control" required name="isFeatured">
+														<select class="form-control"  required name="isFeatured">
 															<option value="">Select...</option>
 															<option value="0">No</option>
 															<option value="1">Yes</option>
@@ -461,43 +451,33 @@ if (isset($_POST['add'])) {
 										</div>
 
 
-											<input type="submit" value="Submit Property" class="btn btn-info"name="add" style="margin-left:200px;">
+											<input type="submit" value="Submit" class="btn btn-primary"name="add" style="margin-left:200px;">
 
 								</div>
 								</form>
-                    </div>
-            </div>
-        </div>
-	<!--	Submit property   -->
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- /Main Wrapper -->
 
 
-        <!--	Footer   start-->
-		<!--	Footer   start-->
+		<!-- jQuery -->
+        <script src="assets/js/jquery-3.2.1.min.js"></script>
+		<script src="assets/plugins/tinymce/tinymce.min.js"></script>
+		<script src="assets/plugins/tinymce/init-tinymce.min.js"></script>
+		<!-- Bootstrap Core JS -->
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
 
-        <!-- Scroll to top -->
-        <a href="#" class="bg-secondary text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a>
-        <!-- End Scroll To top -->
-    </div>
-</div>
-<!-- Wrapper End -->
-<!--	Js Link
-============================================================-->
-<script src="js/jquery.min.js"></script>
-<script src="js/tinymce/tinymce.min.js"></script>
-<script src="js/tinymce/init-tinymce.min.js"></script>
-<!--jQuery Layer Slider -->
-<script src="js/greensock.js"></script>
-<script src="js/layerslider.transitions.js"></script>
-<script src="js/layerslider.kreaturamedia.jquery.js"></script>
-<!--jQuery Layer Slider -->
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/tmpl.js"></script>
-<script src="js/jquery.dependClass-0.1.js"></script>
-<script src="js/draggable-0.1.js"></script>
-<script src="js/jquery.slider.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/custom.js"></script>
-</body>
+		<!-- Slimscroll JS -->
+        <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<!-- Custom JS -->
+		<script  src="assets/js/script.js"></script>
+
+    </body>
+
 </html>

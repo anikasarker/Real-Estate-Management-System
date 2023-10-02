@@ -2,28 +2,23 @@
 session_start();
 include("config.php");
 $error="";
-$msg=" ";
+$msg="";
 if(isset($_REQUEST['login']))
 {
 	$email=$_REQUEST['email'];
 	$pass=$_REQUEST['pass'];
 	$pass= sha1($pass);
-	//$utype=$_POST['utype'];
-
-
 	
 	if(!empty($email) && !empty($pass))
 	{
-		$sql = "SELECT * FROM user where uemail='".$email."'  && upass='".$pass."' ";
+		$sql = "SELECT * FROM user where uemail='$email' && upass='$pass'";
 		$result=mysqli_query($con, $sql);
 		$row=mysqli_fetch_array($result);
 		   if($row){
 			   
 				$_SESSION['uid']=$row['uid'];
 				$_SESSION['uemail']=$email;
-				//$_SESSION['utype']=$utype;
-
-				header("location:index.php");
+				header("location:index1.php");
 				
 		   }
 		   else{
@@ -33,6 +28,10 @@ if(isset($_REQUEST['login']))
 		$error = "<p class='alert alert-warning'>Please Fill all the fields</p>";
 	}
 }
+
+
+//$db->close();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,13 +46,11 @@ if(isset($_REQUEST['login']))
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="shortcut icon" href="images/favicon.ico">
 
-<!--	Fonts
-	========================================================-->
+<!--	Fonts-->
 <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,600,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
 
-<!--	Css Link
-	========================================================-->
+<!--	Css Link-->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap-slider.css">
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
@@ -64,53 +61,17 @@ if(isset($_REQUEST['login']))
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
+<link rel="stylesheet" href="css/logstyle.css">
 
-<!--	Title
-	=========================================================-->
+<!--	Title-->
 <title>Real Estate Management System</title>
 </head>
 <body>
-
-<!--	Page Loader
-=============================================================
-<div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
-	<div class="d-flex justify-content-center y-middle position-relative">
-	  <div class="spinner-border" role="status">
-		<span class="sr-only">Loading...</span>
-	  </div>
-	</div>
-</div>
---> 
-
-
 <div id="page-wrapper">
     <div class="row"> 
         <!--	Header start  -->
-		<?php include("include/header.php");?>
-        <!--	Header end  -->
-        
-        <!--	Banner   --->
-     <!-- <div class="banner-full-row page-banner" style="background-image:url('images/breadcromb.jpg');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>Login</b></h2>
-                    </div>
-                    <div class="col-md-6">
-                        <nav aria-label="breadcrumb" class="float-left float-md-right">
-                            <ol class="breadcrumb bg-transparent m-0 p-0">
-                                <li class="breadcrumb-item text-white"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Login</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-         <!--	Banner   --->
-		 
-		 
-		 
+		
+        <!--	Header end  --> 
         <div class="page-wrappers login-body full-row bg-gray">
             <div class="login-wrapper">
             	<div class="container">
@@ -123,13 +84,15 @@ if(isset($_REQUEST['login']))
 								<!-- Form -->
 								<form method="post">
 									<div class="form-group">
-										<input type="email"  name="email" class="form-control" placeholder="Your Email*">
+										<input type="email"  name="email" class="form-control" style="font-family: 'Marcellus SC', serif; "placeholder="Your Email*">
 									</div>
 									<div class="form-group">
-										<input type="password" name="pass"  class="form-control" placeholder="Your Password">
+										<input type="password" name="pass"  class="form-control" style="font-family: 'Marcellus SC', serif;"placeholder="Your Password">
 									</div>
 									
-										<button class="btn btn-info" name="login" value="Login" type="submit">Login <a href="userindex.php"></a></button>
+									<div class="form-group">
+									<button class="btn btn-info" name="login" value="Login" type="submit">Login <a href=""></a></button>
+									</div>
 									
 								</form>
 								
@@ -137,17 +100,6 @@ if(isset($_REQUEST['login']))
 									<span class="or-line"></span>
 									<span class="span-or">or</span>
 								</div>
-								
-								<!-- Social Login -->
-								<div class="social-login">
-									<span>Login with</span>
-									<a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-									<a href="#" class="google"><i class="fab fa-google"></i></a>
-									<a href="#" class="facebook"><i class="fab fa-twitter"></i></a>
-									<a href="#" class="google"><i class="fab fa-instagram"></i></a>
-								</div> 
-								<!-- /Social Login -->
-								
 								<div class="text-center dont-have">Don't have an account? <a href="register.php">Register</a></div>
 								
 							</div>
@@ -159,9 +111,6 @@ if(isset($_REQUEST['login']))
 	<!--	login  -->
         
         
-        <!--	Footer   start-->
-		<?php include("include/footer.php");?>
-		<!--	Footer   start-->
         
         <!-- Scroll to top --> 
         <a href="#" class="bg-secondary text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a> 
@@ -170,8 +119,7 @@ if(isset($_REQUEST['login']))
 </div>
 <!-- Wrapper End --> 
 
-<!--	Js Link
-============================================================--> 
+<!--	Js Link--> 
 <script src="js/jquery.min.js"></script> 
 <!--jQuery Layer Slider --> 
 <script src="js/greensock.js"></script> 

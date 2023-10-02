@@ -31,13 +31,11 @@ if(isset($_REQUEST['calc']))
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="shortcut icon" href="images/favicon.ico">
 
-<!--	Fonts
-	========================================================-->
+<!--	Fonts-->
 <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,600,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
 
-<!--	Css Link
-	========================================================-->
+<!--	Css Link-->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap-slider.css">
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
@@ -48,57 +46,22 @@ if(isset($_REQUEST['calc']))
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
-<!-- FOR MORE PROJECTS visit: freeprojectscodes.com -->
-<!--	Title
-	=========================================================-->
+<link rel="stylesheet" href="css/calcstyle.css">
+<!--	Title-->
 <title>Real Estate Management System</title>
 </head>
 <body>
-
-<!--	Page Loader
-============================================================= -->
-<!-- <div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
-	<div class="d-flex justify-content-center y-middle position-relative">
-	  <div class="spinner-border" role="status">
-		<span class="sr-only">Loading...</span>
-	  </div>
-	</div>
-</div> -->
-
 
 <div id="page-wrapper">
     <div class="row"> 
         <!--	Header start  -->
 		<?php include("include/header.php");?>
-        <!--	Header end  -->
-        
-        <!--	Banner   --->
-         <!-- <div class="banner-full-row page-banner" style="background-image:url('images/breadcromb.jpg');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>User Listed Property</b></h2>
-                    </div>
-                    <div class="col-md-6">
-                        <nav aria-label="breadcrumb" class="float-left float-md-right">
-                            <ol class="breadcrumb bg-transparent m-0 p-0">
-                                <li class="breadcrumb-item text-white"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">User Listed Property</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-         <!--	Banner   --->
-		 
-		 
-		<!--	Submit property   -->
+        <!--	Header end  -->   
         <div class="full-row bg-gray">
             <div class="container">
                     <div class="row mb-5 ">
 						<div class="col-lg-12 ">
-							<h2 class="text-secondary double-down-line text-center">Installment Calculator</h2>
+							<h2 class="text-secondary  text-center">Installment Calculator</h2>
                         </div>
 					</div>
 					<center>
@@ -133,18 +96,17 @@ if(isset($_REQUEST['calc']))
                                 <td><b><?php echo '$'.$pay ; ?></b></td>
                             </tr>
 							<tr class="text-center">
-                                <td><b>Pay Per Month (Installment)</b></td>
+                                <td><b>Installment Per Month</b></td>
                                 <td><b><?php echo '$'.$month ; ?></b></td>
                             </tr>
+                          
 							
                         </tbody>
                     </table> 
 					</center>
             </div>
         </div>
-	<!--	Submit property   -->
-        
-        
+	
         <!--	Footer   start-->
 		<?php include("include/footer.php");?>
 		<!--	Footer   start-->
@@ -156,8 +118,7 @@ if(isset($_REQUEST['calc']))
 </div>
 <!-- Wrapper End --> 
 
-<!--	Js Link
-============================================================--> 
+<!--	Js Link--> 
 <script src="js/jquery.min.js"></script> 
 <!--jQuery Layer Slider --> 
 <script src="js/greensock.js"></script> 
